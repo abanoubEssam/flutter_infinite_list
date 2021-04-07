@@ -28,7 +28,6 @@ class App extends StatelessWidget {
   }
 }
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -55,11 +54,11 @@ class _HomePageState extends State<HomePage> {
             child: CircularProgressIndicator(),
           );
         }
-        if (state is PostFailure) {
-          return Center(
-            child: Text('failed to fetch posts'),
-          );
-        }
+        // if (state is PostFailure) {
+        //   return Center(
+        //     child: Text('failed to fetch posts'),
+        //   );
+        // }
         if (state is PostSuccess) {
           if (state.posts.isEmpty) {
             return Center(
@@ -78,6 +77,9 @@ class _HomePageState extends State<HomePage> {
             controller: _scrollController,
           );
         }
+        return Center(
+          child: Text('failed to fetch posts'),
+        );
       },
     );
   }
@@ -97,8 +99,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
-
 class BottomLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -116,7 +116,6 @@ class BottomLoader extends StatelessWidget {
     );
   }
 }
-
 
 class PostWidget extends StatelessWidget {
   final Post post;
