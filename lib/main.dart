@@ -120,7 +120,7 @@ class BottomLoader extends StatelessWidget {
 class PostWidget extends StatelessWidget {
   final Post post;
 
-  const PostWidget({Key key, @required this.post}) : super(key: key);
+  const PostWidget({@required this.post});
 
   @override
   Widget build(BuildContext context) {

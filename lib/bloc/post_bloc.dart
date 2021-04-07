@@ -26,6 +26,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
   @override
   Stream<PostState> mapEventToState(PostEvent event) async* {
+    print("state $state");
     final currentState = state;
     if (event is PostFetched && !_hasReachedMax(currentState)) {
       try {
@@ -44,6 +45,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
                 );
         }
       } catch (_) {
+        print("catch");
         yield PostFailure();
       }
     }

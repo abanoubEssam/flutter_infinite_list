@@ -11,7 +11,11 @@ abstract class PostState extends Equatable {
 
 class PostInitial extends PostState {}
 
-class PostFailure extends PostState {}
+class PostFailure extends PostState {
+  PostFailure(){
+    print("failed");
+  }
+}
 
 class PostSuccess extends PostState {
   final List<Post> posts;
